@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>汽配全网比价查询工具 - 演示</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white shadow p-6 rounded">
+      <h1 class="text-2xl font-bold mb-4">汽配全网比价查询（演示）</h1>
+
+      <div class="mb-4">
+        <label class="block mb-1">单条 OE 码</label>
+        <input id="oeInput" class="border p-2 w-full" placeholder="例如：8K0940717" />
+        <div class="mt-2 flex gap-2">
+          <button id="searchBtn" class="bg-blue-600 text-white px-4 py-2 rounded">全网比价</button>
+          <button id="exportBtn" class="bg-green-600 text-white px-4 py-2 rounded">导出当前结果</button>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block mb-1">批量上传（CSV 单列 OE 码）</label>
+        <input id="fileInput" type="file" accept=".csv,.txt,.xlsx" class="w-full" />
+        <div class="mt-2 text-sm text-gray-600">最多支持 500 条 OE 码</div>
+      </div>
+
+      <div id="progress" class="mb-4 text-sm text-gray-700"></div>
+
+      <div id="results"></div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
